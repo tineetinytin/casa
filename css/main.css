@@ -1,0 +1,1489 @@
+/******************************************************
+            TABLE OF CONTENTS
+-----------------------------------------
+  - 01: Color and Buttons info
+  - 02: CSS RESET
+  - 03: GLOBAL STYLES
+  - 04: HEADER AND NAV
+    * 02.1: NAV RULES (full screeen nav and hamburger menu)
+    * 02.2: HEADER - HERO
+  - 03: GENERIC SELECTORS (shared page class styles)
+  - 05: MAIN BODY CONTENT
+  - 06: LANDING PAGE
+    * 06.1 LANDING: hero section
+    * 06.2 LANDING: program section
+    * 06.3 LANDING: About Us section
+    * 06.4 LANDING: testimonies section
+    * 06.5 LANDING: contact us section
+  - 07 - FOOTER
+  - 08: STAFF AND FACULTY PAGE
+  - 09: PRIMARY PAGE
+  - 10: ELEMENTARY PAGE
+  - 11: TODDLER PAGE
+  - 12: ADMISSIONS PAGE
+  - 13: ABOUT SCHOOL PAGE
+  - 14: ABOUT MONTESSORI
+  - 15: FAQ
+  - 16: CONTACT US
+  - 17: EVENTS
+  - ...
+******************************************************/
+
+/******************************************************
+  01: COLOR AND BUTTONS GUIDELINES
+******************************************************/
+
+/* COLOR GIUDE:  
+- orange: #f4712a;
+- bright blue: #2a9df4;
+- light blue (background): #edf6ff;
+*/
+
+/* BUTTONS: 
+- regular { 
+    background-color: #f4712a; orange
+    color: #fff;
+};
+- onHover { 
+    background-color: #2a9df4;  dark-blue
+    color: #fff;
+};
+- onClick { 
+    background-color: #edf6ff;  light-blue
+    color: #2a9df4; dark-blue
+};
+*/
+
+/******************************************************
+            02: CSS RESET (ERIC MEYER, MODIFIED)
+******************************************************/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+* {
+  /* universal selector */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+
+/******************************************************
+            03: GLOBAL STYLES
+******************************************************/
+
+html {
+  /* font is a shorthand property */
+  font: 10px "Roboto", sans-serif;
+}
+
+h1 {
+  /* type selector */
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+h4 {
+  font-size: 1.8rem;
+  margin: 20px;
+}
+
+h5 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 8px auto 3px;
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none; /* Remove bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.lightBlueBg {
+  /* class selector*/
+  background-color: #edf6ff;
+}
+
+.boldTx {
+  font-weight: bold;
+}
+
+.bold500 {
+  font-weight: 500;
+}
+
+/******************************************************
+            04: HEADER AND NAV
+******************************************************/
+
+nav {
+  padding-top: 15px;
+}
+
+nav img {
+  /* descendant selector */
+  width: 200px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+nav p {
+  color: #f4712a;
+  font-size: 2rem;
+  float: right;
+  padding: 5px 15px 0 0;
+}
+
+nav .currentPage {
+  background-color: #f4712a;
+  color: #fff;
+}
+
+nav .subCurrentPage {
+  background-color: #edf6ff;
+  color: #f4712a;
+}
+
+/* *** 04.1: NAV RULES (full screeen nav and hamburger menu) *** */
+
+nav ul.menu {
+  background-color: #2a9df4;
+  text-align: center;
+  /* padding: 10px 0; */
+}
+
+label {
+  float: right;
+  padding-right: 10px;
+  text-align: right;
+}
+
+nav ul.menu li {
+  font-size: 1.5rem;
+}
+nav li a {
+  color: #fff;
+  display: block;
+  padding: 16px;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+/* nav li:first-of-type a {
+    padding-top: 20px;
+}
+nav li:last-of-type a {
+    padding-bottom: 20px;
+} */
+nav li a:hover {
+  /* pseudo-class */
+  background-color: #f4712a;
+  color: #fff;
+}
+nav li a:active {
+  background-color: #edf6ff;
+  color: #f4712a;
+}
+
+.clearIt {
+  clear: both;
+}
+
+nav ul {
+  display: none;
+}
+
+nav input[type="checkbox"]:checked ~ ul.menu {
+  /* sibling selector (~) */
+  display: block;
+}
+
+nav input[type="checkbox"] {
+  display: none;
+}
+
+.fa-bars {
+  color: #000;
+  font-size: 3em;
+}
+
+.hiddenOnMobile {
+  display: none;
+}
+.fa-caret-down {
+  display: none;
+}
+
+nav ul li ul {
+  display: block;
+}
+
+nav ul li ul a {
+  font-weight: 300;
+}
+
+@media screen and (min-width: 664px) {
+  label {
+    display: none;
+  }
+  .hiddenOnMobile {
+    display: block;
+  }
+
+  /* fixes bug when drop down menu is still open when resized to a larger screen*/
+  nav input[type="checkbox"]:checked ~ ul.menu {
+    display: flex;
+  }
+
+  nav ul li a {
+    font-size: 1.3rem;
+    font-weight: 400;
+    padding: 10px;
+  }
+
+  nav ul.menu {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .fa-caret-down {
+    display: inline-block;
+  }
+
+  nav ul li {
+    position: relative;
+  }
+
+  nav ul li ul {
+    background-color: #2a9df4;
+    color: #fff;
+    display: none;
+    padding: 0;
+    position: absolute;
+    left: -21px;
+    margin-top: 0;
+    opacity: 0.9;
+    width: 150px;
+  }
+  nav ul li ul a {
+    font-weight: inherit;
+  }
+  nav ul li ul a:hover {
+    background-color: #f4712a;
+  }
+  nav ul li ul a:active {
+    background-color: #edf6ff;
+    color: #f4712a;
+  }
+
+  nav ul li:hover ul,
+  nav ul li ul:hover {
+    display: block;
+    /* z-index - because of the background image */
+    z-index: 1;
+  }
+}
+
+/* *** 04.2: HEADER - HERO *** */
+
+h1 {
+  /* font: medium 25px; shorthand doesn't work*/
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+#landing .hero h2 {
+  /* id selector*/
+  /* font: regular 20px; shorthand doesn't work*/
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.button {
+  /* class selector */
+  display: inline-block;
+  background-color: #f4712a;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 12px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.button:hover {
+  background-color: #2a9df4;
+  color: #fff;
+}
+
+.button:active {
+  background-color: #edf6ff;
+  color: #2a9df4;
+  border: 1px solid #2a9df4;
+}
+
+@media screen and (min-width: 664px) {
+  .button {
+    background-color: #f4712a;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 12px 40px;
+    width: auto;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+
+  #landing .hero h2 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 724px) {
+  nav ul li a {
+    font-size: inherit;
+  }
+}
+
+/******************************************************
+            05: MAIN BODY CONTENT
+******************************************************/
+
+.container {
+  max-width: 1200px;
+}
+
+main section {
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/******************************************************
+            06: LANDING PAGE
+******************************************************/
+
+/* *** 06.1 hero section *** */
+/* fixes hero img height */
+body,
+html {
+  height: 100%;
+}
+
+.hero {
+  /* Position and center the image to scale nicely on all screens */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/landing_hero.jpeg") no-repeat center;
+  background-size: cover;
+  display: flex;
+  height: 40%;
+  position: relative;
+}
+
+.hero-text {
+  color: white;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+}
+
+#landing .hero button {
+  margin-top: 18px;
+}
+#landing .hero h2 {
+  margin-top: 5px;
+}
+
+@media screen and (min-width: 664px) {
+  .hero {
+    height: 45%;
+  }
+  h1 {
+    font-size: 50px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .hero {
+    height: 50%;
+  }
+}
+@media screen and (min-width: 992px) {
+  .hero {
+    height: 55%;
+  }
+}
+@media screen and (min-width: 1120px) {
+  .hero {
+    height: 60%;
+  }
+}
+@media screen and (min-width: 1240px) {
+  .hero {
+    height: 55%;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero {
+    height: 60%;
+  }
+}
+
+/* *** 06.2 LANDING: program section *** */
+
+.programCard {
+  padding: 30px;
+}
+
+.link > a {
+  /* child Selector (>)*/
+  color: #f4712a;
+  display: inline-block;
+  margin-top: 0;
+}
+.link a:hover {
+  color: #2a9df4;
+}
+
+.programCard img,
+.programCard i {
+  width: 50px;
+}
+.programCard i {
+  font-size: 50px;
+  color: #2a9df4;
+}
+main a {
+  color: #f4712a;
+  display: block;
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+main a:hover {
+  color: #2a9df4;
+}
+
+.programs div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  /* justify-content: space-between; */
+}
+
+.programCard {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.programCard:nth-child(2) {
+  margin: 10px 0;
+}
+
+/* *** 06.3 LANDING: About Us section *** */
+
+section.aboutUs,
+.contactUs {
+  background-color: #edf6ff;
+}
+section.aboutUs p {
+  margin: 0 auto;
+  max-width: 626px;
+  text-align: left;
+}
+
+/* *** 06.4 LANDING: testimonies section *** */
+
+.testimonies img {
+  max-width: 150px;
+}
+
+.testimonies i {
+  color: #2a9df4;
+  display: block;
+  font-size: 30px;
+  margin: 25px 0;
+}
+
+.testimonies p:first-of-type {
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.testimonies article .leftTx p {
+  text-align: right;
+}
+
+.testimonies article .leftTx p:first-of-type {
+  text-align: right;
+  margin-bottom: 0;
+}
+
+/* remove the last article on mobile view */
+.testimonies article:last-of-type {
+  display: none;
+}
+.testimonies article:nth-child(2) {
+  margin: 50px 0;
+}
+
+/* *** 06.5 LANDING: contact us section *** */
+
+@media screen and (min-width: 664px) {
+  .programs div {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .testimonies article:nth-child(2) {
+    margin: 0;
+  }
+  .programCard {
+    width: 32%;
+  }
+
+  .programCard:nth-child(2) {
+    margin: 0 10px;
+  }
+  .testimonies article {
+    max-width: 30%;
+  }
+  /* .testimonies p {
+    text-align: justify;
+  } */
+
+  .contactUs div {
+    display: flex;
+    margin: 0 auto;
+    max-width: 626px;
+  }
+  .contactUs div p {
+    max-width: 264px;
+  }
+  .contactUs div a {
+    display: inline-block;
+    /* max-width: 40%; */
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .testimonies article:last-of-type {
+    display: block;
+  }
+  .testimonies article {
+    max-width: 20%;
+  }
+}
+
+/******************************************************
+            07: FOOTER
+******************************************************/
+
+footer {
+  font-size: 1.5rem;
+  max-width: 992px;
+  margin: 50px auto;
+  /* margin bottom doesn't work for me */
+  padding: 0 20px 50px;
+  text-align: center;
+}
+
+footer img {
+  padding-left: 10px;
+  padding-bottom: 10px;
+  width: 200px;
+}
+
+footer li {
+  line-height: 1.8;
+}
+
+footer li a {
+  color: #000;
+}
+footer li a:hover {
+  color: #f4712a;
+}
+footer li a:active {
+  color: #2a9df4;
+}
+
+footer .addressIcon {
+  margin-right: 10px;
+}
+
+footer .socialLinks i {
+  font-size: 3rem;
+  padding-top: 5px;
+}
+footer .fa-facebook-square,
+.fa-twitter-square,
+.fa-youtube:hover {
+  color: #2a9df4;
+}
+footer .fa-facebook-square:hover,
+.fa-twitter-square:hover {
+  color: #f4712a;
+}
+footer .fa-youtube {
+  color: #f4712a;
+  margin: 0 15px;
+}
+
+footer small {
+  display: block;
+  font-size: 1rem;
+  padding-top: 15px;
+}
+
+@media screen and (min-width: 664px) {
+  .hiddenLogo {
+    display: none;
+  }
+  footer .flexContainer {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+@media screen and (min-width: 810px) {
+  .hiddenLogo {
+    display: block;
+  }
+  footer h5 {
+    margin-top: 0;
+  }
+}
+
+/******************************************************
+  08: STAFF AND FACULTY PAGE
+******************************************************/
+
+#staff .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/staff2.svg") no-repeat center;
+  background-size: cover;
+}
+.facultyWrapper {
+  background-color: #edf6ff;
+  padding: 25px;
+}
+#aboutFaculty {
+  background: #fff;
+  margin-bottom: 20px;
+}
+.facultyDetails {
+  background: #fff;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  margin-bottom: 15px;
+  padding: 30px 15px 30px 15px;
+}
+.facultyImage {
+  text-align: center;
+}
+.facultyImage p {
+  font-weight: 500;
+}
+.facultyDesc p {
+  text-align: left;
+}
+.join a {
+  display: inline;
+}
+@media screen and (min-width: 724px) {
+  .facultyWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+  .facultyDetails {
+    display: flex;
+    flex: 0 0 48%;
+  }
+  .facultyImage {
+    flex: 0 0 30%;
+    padding: 5px 10px 5px 5px;
+  }
+  .facultyImage img {
+    width: 70%;
+  }
+  .maxWidth {
+    max-width: 626px;
+  }
+}
+
+/******************************************************
+            09: PRIMARY PROGRAM
+******************************************************/
+#primary .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/heroPrimary.jpeg") no-repeat center;
+  background-size: cover;
+}
+.doIt {
+  max-width: 1000px;
+  margin: auto;
+}
+.doIt p,
+.curriculum p {
+  text-align: left;
+}
+.doIt a {
+  display: inline;
+}
+/*
+.doIt p{
+  margin-bottom: 50px;
+}
+*/
+.doIt img {
+  display: none;
+}
+.curriculum {
+  background-color: #edf6ff;
+}
+.curriculum div {
+  padding-top: 20px;
+}
+.curriculum div:first-of-type {
+  padding-top: 0;
+}
+.enroll {
+  margin-top: 30px;
+}
+
+@media screen and (min-width: 664px) {
+  #primary .programs div {
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .doIt {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+  }
+  
+  .doIt img {
+    display: block;
+  }
+  .curriculumPoints {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+  }
+  .curriculum div {
+    padding-top: 0px;
+  }
+  .curriculumPoints p {
+    text-align: left;
+  }
+}
+
+/******************************************************
+            10: ELEMENTARY PROGRAM
+******************************************************/
+#elementary .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/elementaryHero.jpeg") no-repeat center;
+  background-size: cover;
+}
+
+@media screen and (min-width: 664px) {
+  #elementary .programs div {
+    justify-content: center;
+  }
+}
+
+/******************************************************
+            11: TODDLER PROGRAM
+******************************************************/
+
+#toddler .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/hands.jpeg") no-repeat center;
+  background-size: cover;
+}
+@media screen and (min-width: 664px) {
+  #toddler .programs div {
+    justify-content: center;
+  }
+}
+
+/******************************************************
+            12: ADMISSIONS PAGE
+******************************************************/
+
+#admissions .hero {
+  /* Position and center the image to scale nicely on all screens */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/admission1.jpeg") no-repeat center;
+  background-size: cover;
+}
+.admission div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.admission div .programCard {
+  margin: 0 auto 20px;
+}
+.twoCols,
+.quesCols {
+  display: flex;
+  flex-direction: column;
+}
+#admissions .container {
+  max-width: 979px;
+}
+.twoCols ul,
+.quesCols ul,
+.quesCols p {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.twoCols ul li,
+.quesCols ul li {
+  font-size: 1.5em;
+  line-height: 1.8;
+}
+
+.cardSmText {
+  margin-top: 15px;
+  font-size: 1.1em;
+  line-height: 1;
+  color: #545454;
+}
+
+#admissions .forms ul li {
+  line-height: 0.5;
+}
+#admissions .forms a {
+  font-size: 1em;
+}
+
+@media screen and (min-width: 664px) {
+  .twoCols .imgParent {
+    width: 52%;
+  }
+  #admissions .forms .imgParent {
+    width: 50%;
+    margin-top: 16px;
+  }
+  #admissions .forms ul {
+    width: 48%;
+    padding-left: 60px;
+  }
+
+  .twoCols,
+  .quesCols {
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+  .twoCols ul {
+    width: 45%;
+  }
+  .twoCols ul li {
+    line-height: 1.5;
+  }
+
+  .quesCols article {
+    width: 48%;
+  }
+}
+@media screen and (min-width: 682px) {
+  .twoCols .imgParent {
+    width: 50%;
+  }
+
+  .twoCols ul li {
+    line-height: 1.8;
+  }
+}
+@media screen and (min-width: 800px) {
+  .twoCols .imgParent {
+    width: 47%;
+  }
+}
+@media screen and (min-width: 887px) {
+  .twoCols .imgParent {
+    width: 45%;
+  }
+}
+
+/******************************************************
+  13: ABOUT SCHOOL PAGE
+******************************************************/
+#aboutUs .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/aboutSchool.jpeg") no-repeat center;
+  background-size: cover;
+}
+
+.mission p {
+  margin: 0 auto;
+  max-width: 626px;
+}
+.whyCasa {
+  text-align: left;
+}
+
+.ourTeam,
+.mission {
+  background-color: #edf6ff;
+}
+.ourTeam a {
+  text-align: center;
+}
+.ourTeam article {
+  text-align: left;
+}
+.ourValues article {
+  text-align: left;
+}
+.aboutDesc img {
+  display: none;
+}
+.aboutDesc a {
+  display: inline;
+}
+.whyCasa .keyPoints ul {
+  list-style-type: disc;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin-left: 45px;
+}
+
+#aboutUs .whyCasa,
+#aboutUs .ourValues,
+.ourTeamContainer,
+#aboutUs .programs {
+  max-width: 950px;
+  margin: auto;
+}
+@media screen and (min-width: 664px) {
+  .aboutDesc {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+
+  .aboutDesc img {
+    display: block;
+    flex: 0 0 40%;
+    width: 40%;
+    height: 40%;
+  }
+
+  .whyCasa article {
+    flex: 0 0 50%;
+  }
+  .whyCasa .keyPoints,
+  .ourValues .aboutDesc img {
+    margin-left: 25px;
+  }
+
+  .ourTeam img {
+    margin-right: 25px;
+  }
+}
+
+/******************************************************
+  14: ABOUT MONTESSORI
+******************************************************/
+#aboutMontessori .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/heroAboutMontessori.jpeg") no-repeat center;
+  background-size: cover;
+}
+.ulStyles {
+  list-style-type: disc;
+  margin-left: 45px;
+}
+.ulStyles li {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  text-align: left;
+}
+.sectionQuote,
+.sectEduAtCDC {
+  background-color: #edf6ff;
+}
+
+.sectionQuote blockquote {
+  font-weight: 500;
+  font-style: italic;
+}
+blockquote footer {
+  text-align: right;
+  margin-bottom: 0;
+  margin-top: 20px;
+  padding-bottom: 0;
+}
+
+#aboutMontessori .sectWhyMont,
+.sectAboutMont,
+.ourEduAtCDCContainer,
+.sectMontVsTrad {
+  max-width: 950px;
+  margin: auto;
+}
+#aboutMontessori blockquote {
+  max-width: 626px;
+  margin: auto;
+}
+
+.sectEduAtCDC img {
+  margin-bottom: 25px;
+}
+
+.sectAboutMont {
+  text-align: left;
+}
+
+@media screen and (min-width: 664px) {
+  .sectWhyMont img {
+    flex: 0 0 50%;
+    /* margin-top: 9px; */
+  }
+
+  .sectEduAtCDC article {
+    flex: 0 0 60%;
+  }
+
+  .sectAboutMont img {
+    /* margin: 9px 0 0 50px;
+    margin-left: 50px; */
+    margin-left: 25px;
+  }
+
+  /* .sectWhyMont ul,
+  .sectEduAtCDC ul {
+    margin-left: 60px;
+  } */
+}
+
+@media screen and (min-width: 800px) {
+  .sectWhyMont img {
+    flex: 0 0 40%;
+  }
+}
+
+/******************************************************
+  15: FAQ
+******************************************************/
+
+#faq .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/faqHero4.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.admissionFaq {
+  background-color: #edf6ff;
+}
+.faqContainer {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.faqContainer h4,
+.faqContainer h5,
+.faqContainer p {
+  text-align: left;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+/* .faqContainer p{
+  padding: 0 40px 0;
+} */
+.faqContainer h4 {
+  padding-top: 40px;
+  padding-bottom: 10px;
+  margin: 0;
+}
+.faqContainer h5 {
+  font-style: italic;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+.faqContainer h5:first-of-type {
+  padding-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .faqContainer p,
+  .faqContainer h5 {
+    max-width: 992px;
+    margin: auto;
+  }
+  .faqContainer h4 {
+    max-width: 1100px;
+    margin: auto;
+  }
+}
+
+/******************************************************
+  16: CONTACT US
+******************************************************/
+
+#contactUs .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/contact.jpeg") no-repeat center;
+  background-size: cover;
+}
+
+.contact {
+  margin: 0 auto;
+}
+.contact label {
+  font-size: 1.5em;
+  float: left;
+}
+
+.contact h5 {
+  text-align: left;
+}
+
+.contact fieldset {
+  border: 1px dashed #f4712a;
+  padding: 2.5em 10px;
+}
+
+.contact fieldset legend {
+  color: #f4712a;
+  font-weight: 500;
+  text-align: left;
+  font-size: 1.3em;
+}
+
+.contact fieldset label {
+  display: block;
+}
+
+.contact fieldset input,
+select {
+  padding: 0.75em;
+  border: solid 1px #ccc;
+  border-radius: 3px;
+  margin: 0.3em 0 1em;
+  width: 100%;
+}
+
+.contact form fieldset:first-of-type textarea {
+  border: solid 1px #ccc;
+  width: 100%;
+  border-radius: 3px;
+  margin-top: 0.3em;
+}
+
+.contact fieldset hr {
+  margin: 0 0 10px;
+}
+
+.map iframe {
+  width: 100%;
+}
+.formSection input[type="text"],
+.formSection input[type="email"],
+.formSection input[type="tel"],
+.formSection textarea {
+  font-size: 1.5rem;
+}
+
+/* checkbox */
+
+.contact .checks input {
+  width: inherit;
+}
+
+.contact .checks {
+  display: flex;
+  margin: 5px 0 15px;
+  flex-wrap: wrap;
+}
+.contact .checks div {
+  width: 40%;
+}
+
+/* dropdown menu */
+#dropdownM {
+  margin-bottom: 10px;
+}
+
+#dropdownM h5 {
+  margin-bottom: 3px;
+}
+
+#select {
+  padding: 0.75em;
+  font-size: 1.5em;
+}
+
+/* radio buttons */
+.radioWrapper {
+  margin-bottom: 20px;
+}
+
+.radioWrap {
+  width: 100%;
+}
+
+.map {
+  margin-bottom: 20px;
+}
+
+.radioWrapper div {
+  margin-top: 7px;
+}
+
+.radioWrap input {
+  width: 20px;
+}
+.radioWrap label {
+  display: inline-block;
+}
+
+/* submit button */
+
+.contact input[type="submit"] {
+  margin-top: 20px;
+}
+
+/* dropdown icons */
+
+.mySelect {
+  position: relative;
+}
+
+.mySelect:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0dc";
+  /* color: #ccc; */
+  font-weight: 900;
+  display: inline-block;
+  position: absolute;
+  right: 9px;
+  top: 18px;
+  pointer-events: none;
+}
+
+#dropdownM select {
+  font-family: "Roboto", sans-serif;
+  /* color: #ccc; */
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* checkbox icons */
+
+.checkSelect span {
+  position: relative;
+}
+
+.checkSelect span:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0c8";
+  color: #ccc;
+  font-size: 1.1em;
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: 2px;
+}
+
+.contact input[type="checkbox"] {
+  opacity: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: -2px;
+  margin-left: -1px;
+}
+
+.contact input[type="checkbox"]:checked ~ span:before {
+  color: #f4712a;
+  content: "\f14a";
+  font-size: 1.1em;
+  font-weight: 900;
+}
+
+/* custom radio buttons */
+.radioWrapper span {
+  position: relative;
+  vertical-align: middle;
+}
+.radioWrapper span:before {
+  display: inline-block;
+  font-family: "Font Awesome 5 Free";
+  content: "\f111";
+  font-size: 1.1em;
+  position: absolute;
+  color: #ccc;
+  right: 6px;
+  top: 0;
+}
+.contact input[type="radio"] {
+  opacity: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: -1px;
+  margin-left: 1px;
+}
+.contact input[type="radio"]:checked ~ span:before {
+  content: "\f192";
+  color: #f4712a;
+  font-size: 1.1em;
+  font-weight: 900;
+}
+
+.m_twoCol {
+  margin: 0 auto;
+}
+.m_twoCol a {
+  display: inline-block;
+  margin-top: 0;
+}
+
+.submitPar {
+  width: 100%;
+}
+
+@media screen and (min-width: 664px) {
+  .m_twoCol {
+    display: flex;
+  }
+  .m_twoCol section {
+    width: 45%;
+  }
+}
+
+/******************************************************
+  17: EVENTS
+******************************************************/
+
+#events .hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/eventsHero.jpeg") no-repeat center;
+  background-size: cover;
+}
+.container {
+  padding-bottom: 20px;
+}
+
+.calendar {
+  margin: auto;
+  padding-top: 0;
+  max-width: 100%;
+  padding: 0 40px 40px;
+}
+
+.calendar iframe {
+  height: 300px;
+  width: 100%;
+
+  border: solid 1px #777;
+  height: 400px;
+}
+.eventsHeader {
+  background-color: #edf6ff;
+}
+
+.upcomingEvents {
+  max-width: 1200px;
+  margin: auto;
+  text-align: left;
+}
+
+.upcomingEvents div {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  max-width: 100%;
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.upcomingEvents div p {
+  padding-left: 20px;
+}
+
+@media screen and (min-width: 470px) {
+  .calendar iframe {
+    height: 400px;
+  }
+}
+@media screen and (min-width: 664px) {
+  .calendar iframe {
+    height: 600px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .calendar {
+    max-width: 900px;
+  }
+  .calendar iframe {
+    height: 750px;
+  }
+  .eventsHeader h2 {
+    text-align: left;
+  }
+  .upcomingEvents div {
+    max-width: 50%;
+  }
+}

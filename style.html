@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Guide</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" type="image/jpg" href="./images/iconCase.png" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <style>
+      #stylePage .colors .colorCard {
+        margin: 10px;
+      }
+      #stylePage {
+        margin: 0 auto;
+      }
+      #stylePage .hat {
+        text-align: left;
+      }
+
+      .colorCard p {
+        padding: 20px;
+      }
+      #stylePage .programs div {
+        margin-bottom: 0;
+      }
+
+      #stylePage #typography article p {
+        margin-bottom: 20px;
+      }
+      .colorCard {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+          rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      }
+      .colorCard .bgColor {
+        width: 100%;
+        height: 100px;
+      }
+      .orange {
+        background-color: #f4712a;
+      }
+      .blue {
+        background-color: #2a9df4;
+      }
+      .lgBlue {
+        background-color: #edf6ff;
+      }
+      .white {
+        background-color: #fff;
+      }
+      .black {
+        background-color: #000;
+      }
+      .gray {
+        background-color: #ccc;
+      }
+      #stylePage #typography h1,
+      #stylePage #typography article h2,
+      #stylePage #typography h4,
+      #stylePage #typography h5 {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+      }
+      #typography div {
+        margin-top: 20px;
+      }
+      #typography p,
+      #typography span a,
+      #button p,
+      #styleForm section {
+        text-align: left;
+      }
+
+      #icons i {
+        font-size: 3rem;
+        padding-top: 5px;
+        color: black;
+      }
+      #icons .fa-facebook-square,
+      .fa-twitter-square,
+      .fa-youtube:hover {
+        color: #2a9df4;
+      }
+      #icons .fa-facebook-square:hover,
+      .fa-twitter-square:hover {
+        color: #f4712a;
+      }
+      #icons .fa-youtube {
+        color: #f4712a;
+        margin: 0 15px;
+      }
+
+      /* form */
+      #stylePage .formSection {
+        padding: 0;
+      }
+      /* dublicated css - remove after contactUs css */
+      .formSection input[type="text"],
+      .formSection input[type="email"],
+      .formSection input[type="tel"],
+      .formSection textarea {
+        font-size: 1.5rem;
+      }
+
+      /* icons */
+      .iconStyleCard i {
+        margin: 10px;
+      }
+
+      .sytleSocialIcons {
+        display: flex;
+      }
+
+      @media screen and (min-width: 664px) {
+        .colorCard {
+          width: 20%;
+        }
+        #typography,
+        #button {
+          max-width: 664px;
+        }
+        #typography div,
+        #button div,
+        #styleForm div,
+        #styleCard div {
+          display: flex;
+          justify-content: center;
+        }
+        #typography div article,
+        #button div article,
+        #styleForm div section {
+          width: 50%;
+          text-align: left;
+        }
+        #styleForm div {
+          justify-content: inherit;
+          width: 100%;
+        }
+        #stylePage .iconStyleCard {
+          width: 70%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main id="stylePage" class="container">
+      <section>
+        <h1>Style Guide</h1>
+      </section>
+      <section>
+        <h2>BRANDING</h2>
+        <nav class="hat">
+          <img src="./images/casadelogo_updated.svg" alt="logo" />
+        </nav>
+      </section>
+      <section class="programs container colors" id="programs">
+        <h2>COLORS</h2>
+        <div>
+          <article class="colorCard">
+            <div class="bgColor orange"></div>
+            <p>#f4712a</p>
+          </article>
+          <article class="colorCard">
+            <div class="bgColor blue"></div>
+            <p>#2a9df4</p>
+          </article>
+          <article class="colorCard">
+            <div class="bgColor lgBlue"></div>
+            <p>#edf6ff</p>
+          </article>
+          <article class="colorCard">
+            <div class="bgColor white"></div>
+            <p>#fff</p>
+          </article>
+          <article class="colorCard">
+            <div class="bgColor black"></div>
+            <p>#000</p>
+          </article>
+          <article class="colorCard">
+            <div class="bgColor gray"></div>
+            <p>#ccc</p>
+          </article>
+        </div>
+      </section>
+      <section id="typography">
+        <h2>TYPOGRAPHY</h2>
+        <p><span> Font Family:</span> Roboto</p>
+        <div>
+          <article>
+            <h1>Header 1</h1>
+            <p>Medium, 40px</p>
+            <h2>Header 2</h2>
+            <p>Medium, 25px</p>
+            <h4>Header 4</h4>
+            <p>Bold, 18px</p>
+            <h5>Header 5</h5>
+            <p>Medium, 15px</p>
+          </article>
+          <article>
+            <p>
+              This is Body copy.Apparently we had reached a great height in the
+              atmosphere, for the sky was a dead black, and the stars had ceased
+              to twinkle. By the same illusion which lifts the horizon of the
+              sea to the level of the spectator on a hillside, the sable cloud
+              beneath was dished out, and the car seemed to float in the middle
+              of an immense dark sphere, whose upper half was strewn with
+              silver. Looking down into the dark gulf below, I could see a ruddy
+              light streaming through a rift in the clouds.
+            </p>
+            <p>line-height: 1.8</p>
+            <p>
+              <span class="link"
+                ><a href="./pages/montessori.html"
+                  >This is an inline link</a
+                ></span
+              >
+            </p>
+          </article>
+        </div>
+      </section>
+      <section id="button">
+        <h2>Buttons</h2>
+        <div>
+          <article>
+            <a href="#" class="button">Button</a>
+            <p>border-radius: 5px</p>
+          </article>
+          <article>
+            <p>- regular</p>
+            <p>{ background-color: #f4712a; color: #fff; };</p>
+            <p>- onHover</p>
+            <p>{ background-color: #2a9df4; color: #fff; };</p>
+            <p>- onClick</p>
+            <p>{ background-color: #edf6ff; color: #2a9df4;};</p>
+          </article>
+        </div>
+      </section>
+      <section id="styleForm" class="container contact">
+        <h2>Form</h2>
+        <div>
+          <section class="formSection">
+            <form action="#" id="contact1">
+              <fieldset id="fieldset1">
+                <legend>Fieldset legend</legend>
+                <label for="name">Input label:</label>
+                <input type="text" id="name" name="name" required />
+                <div class="checks">
+                  <div class="checkSelect">
+                    <label for="home">
+                      <input type="checkbox" id="home" name="home" />
+                      <span></span> checkbox</label
+                    >
+                  </div>
+                </div>
+                <!-- <div class="double"> -->
+                <div id="dropdownM">
+                  <div class="mySelect">
+                    <select name="select" id="select">
+                      <option>Please select</option>
+                      <option value="option1">Option 1</option>
+                      <option value="option2">Option 2</option>
+                      <option value="option3">Option 3</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="radioWrapper">
+                  <div>
+                    <ul class="radioWrap">
+                      <li>
+                        <label for="currentMember"
+                          ><input
+                            type="radio"
+                            name="preferred"
+                            id="currentMember"
+                          />
+                          <span></span> radio button</label
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </section>
+          <section>
+            <p>- fieldset</p>
+            <p>{ border: 1px dashed #f4712a }</p>
+            <p>- input</p>
+            <p>{ font-size: 15px }</p>
+            <p>- checkbox/radio button</p>
+            <p>{ color: #ccc/#f4712a }</p>
+          </section>
+        </div>
+      </section>
+      <section id="styleCard">
+        <h2>Cards, Icons</h2>
+        <div>
+          <article class="colorCard">
+            <p>Card Box Shadow</p>
+            <p>box-shadow:</p>
+            <p>
+              rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px
+              1px 3px -1px;
+            </p>
+          </article>
+          <article class="iconStyleCard">
+            <span class="programCard">
+              <i class="fab fa-earlybirds"></i>
+              <i class="fas fa-dove"></i>
+              <i class="fas fa-route"></i>
+              <i class="fas fa-file-alt"></i>
+              <i class="far fa-comments"></i>
+              <i class="fas fa-envelope-open-text"></i>
+              <i class="fas fa-mail-bulk"></i>
+              <i class="fas fa-users"></i>
+            </span>
+            <footer>
+              <i class="fas fa-school addressIcon"></i>
+
+              <i class="fas fa-phone-alt addressIcon"></i>
+
+              <i class="fas fa-envelope addressIcon"></i>
+
+              <div class="sytleSocialIcons">
+                <a class="socialLinks"
+                  ><i class="fab fa-facebook-square"></i
+                ></a>
+
+                <a class="socialLinks"><i class="fab fa-youtube"></i></a>
+
+                <a class="socialLinks"><i class="fab fa-twitter-square"></i></a>
+              </div>
+            </footer>
+          </article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
